@@ -15,3 +15,9 @@ Script used for launching node app from the node-ami is available [here](./user-
 
 ### react-sample-nginx AMI build
 Script used for launching react app from the react-sample-nginx AMI is available [here](./user-data-react-sample-nginx-launch.sh)
+
+### Traffic generation using robot framework
+Script used to send traffic to the load balancer is available [here](./React.robot)
+
+### Excerpt from the output log of the robot framework test
+Partial output log from the robot framework script is available [here](./output.xml)

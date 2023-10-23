@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.6 on darwin)" generated="20231020 19:04:25.234" rpa="false" schemaversion="4">
+<suite id="s1" name="React" source="/Users/pawelpaszki/robot-playground/first-script/Tests/React.robot">
+<test id="s1-t1" name="Should be able to query react app" line="12">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231020 19:04:25.417" endtime="20231020 19:04:25.417"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>100s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20231020 19:04:25.417" endtime="20231020 19:04:25.417"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>119</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:25.418" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:25.417" endtime="20231020 19:04:29.590"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:29.591" endtime="20231020 19:04:29.900"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:29.900" endtime="20231020 19:04:30.242"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:30.683" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:04:30.243" endtime="20231020 19:04:30.683"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:30.683" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:04:30.683" endtime="20231020 19:04:30.684"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:31.106" level="INFO">${reqCount} = 720</msg>
+<status status="PASS" starttime="20231020 19:04:30.684" endtime="20231020 19:04:31.106"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:31.107" level="INFO">Counter: 720</msg>
+<status status="PASS" starttime="20231020 19:04:31.107" endtime="20231020 19:04:31.107"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:30.243" endtime="20231020 19:04:31.107"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:31.112" endtime="20231020 19:04:31.112"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:31.107" endtime="20231020 19:04:31.112"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:30.243" endtime="20231020 19:04:31.112"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:31.112" endtime="20231020 19:04:31.380"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:25.417" endtime="20231020 19:04:31.380"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:31.381" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:31.381" endtime="20231020 19:04:35.188"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:35.188" endtime="20231020 19:04:35.495"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:35.495" endtime="20231020 19:04:35.832"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:36.271" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:35.833" endtime="20231020 19:04:36.271"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:36.272" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:36.271" endtime="20231020 19:04:36.272"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:36.700" level="INFO">${reqCount} = 721</msg>
+<status status="PASS" starttime="20231020 19:04:36.272" endtime="20231020 19:04:36.700"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:36.700" level="INFO">Counter: 721</msg>
+<status status="PASS" starttime="20231020 19:04:36.700" endtime="20231020 19:04:36.701"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:35.832" endtime="20231020 19:04:36.701"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:36.705" endtime="20231020 19:04:36.705"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:36.701" endtime="20231020 19:04:36.705"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:35.832" endtime="20231020 19:04:36.705"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:36.705" endtime="20231020 19:04:36.967"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:31.381" endtime="20231020 19:04:36.967"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:36.968" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:36.967" endtime="20231020 19:04:40.233"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:40.234" endtime="20231020 19:04:40.543"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:40.543" endtime="20231020 19:04:40.859"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:41.295" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:40.860" endtime="20231020 19:04:41.295"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:41.295" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:41.295" endtime="20231020 19:04:41.295"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:41.718" level="INFO">${reqCount} = 722</msg>
+<status status="PASS" starttime="20231020 19:04:41.295" endtime="20231020 19:04:41.718"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:41.719" level="INFO">Counter: 722</msg>
+<status status="PASS" starttime="20231020 19:04:41.719" endtime="20231020 19:04:41.719"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:40.860" endtime="20231020 19:04:41.719"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:41.722" endtime="20231020 19:04:41.722"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:41.719" endtime="20231020 19:04:41.722"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:40.860" endtime="20231020 19:04:41.722"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:41.722" endtime="20231020 19:04:41.983"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:36.967" endtime="20231020 19:04:41.983"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:41.984" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:41.983" endtime="20231020 19:04:46.251"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:46.251" endtime="20231020 19:04:46.564"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:46.564" endtime="20231020 19:04:46.879"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:47.316" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:46.879" endtime="20231020 19:04:47.316"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:47.317" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:47.316" endtime="20231020 19:04:47.317"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:47.745" level="INFO">${reqCount} = 723</msg>
+<status status="PASS" starttime="20231020 19:04:47.317" endtime="20231020 19:04:47.746"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:47.746" level="INFO">Counter: 723</msg>
+<status status="PASS" starttime="20231020 19:04:47.746" endtime="20231020 19:04:47.746"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:46.879" endtime="20231020 19:04:47.746"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:47.749" endtime="20231020 19:04:47.749"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:47.746" endtime="20231020 19:04:47.749"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:46.879" endtime="20231020 19:04:47.749"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:47.749" endtime="20231020 19:04:48.008"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:41.983" endtime="20231020 19:04:48.008"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:48.009" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:48.009" endtime="20231020 19:04:51.673"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:51.674" endtime="20231020 19:04:51.989"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:51.989" endtime="20231020 19:04:52.394"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:52.826" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:04:52.395" endtime="20231020 19:04:52.826"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:52.827" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:04:52.826" endtime="20231020 19:04:52.827"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:53.253" level="INFO">${reqCount} = 724</msg>
+<status status="PASS" starttime="20231020 19:04:52.827" endtime="20231020 19:04:53.253"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:53.253" level="INFO">Counter: 724</msg>
+<status status="PASS" starttime="20231020 19:04:53.253" endtime="20231020 19:04:53.253"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:52.395" endtime="20231020 19:04:53.253"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:53.258" endtime="20231020 19:04:53.258"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:53.254" endtime="20231020 19:04:53.258"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:52.394" endtime="20231020 19:04:53.258"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:53.258" endtime="20231020 19:04:53.523"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:48.008" endtime="20231020 19:04:53.523"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:53.524" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:53.523" endtime="20231020 19:04:56.786"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:04:56.787" endtime="20231020 19:04:57.099"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:04:57.099" endtime="20231020 19:04:57.422"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:57.858" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:57.422" endtime="20231020 19:04:57.858"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:57.859" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:04:57.859" endtime="20231020 19:04:57.859"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:04:58.284" level="INFO">${reqCount} = 725</msg>
+<status status="PASS" starttime="20231020 19:04:57.859" endtime="20231020 19:04:58.284"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:04:58.284" level="INFO">Counter: 725</msg>
+<status status="PASS" starttime="20231020 19:04:58.284" endtime="20231020 19:04:58.284"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:57.422" endtime="20231020 19:04:58.284"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:04:58.287" endtime="20231020 19:04:58.288"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:04:58.284" endtime="20231020 19:04:58.288"/>
+</branch>
+<status status="PASS" starttime="20231020 19:04:57.422" endtime="20231020 19:04:58.288"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:04:58.288" endtime="20231020 19:04:58.551"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:53.523" endtime="20231020 19:04:58.551"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:04:58.552" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:04:58.551" endtime="20231020 19:05:02.546"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:02.546" endtime="20231020 19:05:02.859"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:02.859" endtime="20231020 19:05:03.191"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:03.626" level="INFO">${insID} = i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:03.192" endtime="20231020 19:05:03.626"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:03.627" level="INFO">Instance id: i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:03.627" endtime="20231020 19:05:03.627"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:04.052" level="INFO">${reqCount} = 727</msg>
+<status status="PASS" starttime="20231020 19:05:03.627" endtime="20231020 19:05:04.052"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:04.053" level="INFO">Counter: 727</msg>
+<status status="PASS" starttime="20231020 19:05:04.053" endtime="20231020 19:05:04.053"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:03.191" endtime="20231020 19:05:04.053"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:04.057" endtime="20231020 19:05:04.057"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:04.053" endtime="20231020 19:05:04.057"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:03.191" endtime="20231020 19:05:04.057"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:04.057" endtime="20231020 19:05:04.321"/>
+</kw>
+<status status="PASS" starttime="20231020 19:04:58.551" endtime="20231020 19:05:04.321"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:04.322" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:04.321" endtime="20231020 19:05:08.007"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:08.008" endtime="20231020 19:05:08.324"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:08.325" endtime="20231020 19:05:08.637"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:09.076" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:08.638" endtime="20231020 19:05:09.077"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:09.077" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:09.077" endtime="20231020 19:05:09.077"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:09.502" level="INFO">${reqCount} = 728</msg>
+<status status="PASS" starttime="20231020 19:05:09.077" endtime="20231020 19:05:09.502"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:09.503" level="INFO">Counter: 728</msg>
+<status status="PASS" starttime="20231020 19:05:09.502" endtime="20231020 19:05:09.503"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:08.637" endtime="20231020 19:05:09.503"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:09.506" endtime="20231020 19:05:09.506"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:09.503" endtime="20231020 19:05:09.506"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:08.637" endtime="20231020 19:05:09.506"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:09.506" endtime="20231020 19:05:09.766"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:04.321" endtime="20231020 19:05:09.766"/>
+</iter>
+<iter>
+<var name="${index}">9</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:09.767" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:09.767" endtime="20231020 19:05:13.093"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:13.093" endtime="20231020 19:05:13.399"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:13.400" endtime="20231020 19:05:13.714"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:14.152" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:13.714" endtime="20231020 19:05:14.152"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:14.152" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:14.152" endtime="20231020 19:05:14.152"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:14.577" level="INFO">${reqCount} = 729</msg>
+<status status="PASS" starttime="20231020 19:05:14.153" endtime="20231020 19:05:14.577"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:14.578" level="INFO">Counter: 729</msg>
+<status status="PASS" starttime="20231020 19:05:14.577" endtime="20231020 19:05:14.578"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:13.714" endtime="20231020 19:05:14.578"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:14.582" endtime="20231020 19:05:14.582"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:14.578" endtime="20231020 19:05:14.582"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:13.714" endtime="20231020 19:05:14.582"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:14.582" endtime="20231020 19:05:14.841"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:09.766" endtime="20231020 19:05:14.841"/>
+</iter>
+<iter>
+<var name="${index}">10</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:14.842" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:14.841" endtime="20231020 19:05:18.756"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:18.757" endtime="20231020 19:05:19.066"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:19.066" endtime="20231020 19:05:19.392"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:19.827" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:19.393" endtime="20231020 19:05:19.827"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:19.827" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:19.827" endtime="20231020 19:05:19.827"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:20.250" level="INFO">${reqCount} = 730</msg>
+<status status="PASS" starttime="20231020 19:05:19.828" endtime="20231020 19:05:20.251"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:20.251" level="INFO">Counter: 730</msg>
+<status status="PASS" starttime="20231020 19:05:20.251" endtime="20231020 19:05:20.251"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:19.393" endtime="20231020 19:05:20.251"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:20.254" endtime="20231020 19:05:20.255"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:20.251" endtime="20231020 19:05:20.255"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:19.392" endtime="20231020 19:05:20.255"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:20.255" endtime="20231020 19:05:20.521"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:14.841" endtime="20231020 19:05:20.521"/>
+</iter>
+<iter>
+<var name="${index}">11</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:20.523" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:20.522" endtime="20231020 19:05:24.373"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:24.374" endtime="20231020 19:05:24.680"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:24.680" endtime="20231020 19:05:25.020"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:25.454" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:05:25.021" endtime="20231020 19:05:25.454"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:25.454" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:05:25.454" endtime="20231020 19:05:25.455"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:25.884" level="INFO">${reqCount} = 731</msg>
+<status status="PASS" starttime="20231020 19:05:25.455" endtime="20231020 19:05:25.884"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:25.885" level="INFO">Counter: 731</msg>
+<status status="PASS" starttime="20231020 19:05:25.885" endtime="20231020 19:05:25.885"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:25.021" endtime="20231020 19:05:25.885"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:25.889" endtime="20231020 19:05:25.889"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:25.885" endtime="20231020 19:05:25.889"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:25.021" endtime="20231020 19:05:25.889"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:25.889" endtime="20231020 19:05:26.151"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:20.522" endtime="20231020 19:05:26.151"/>
+</iter>
+<iter>
+<var name="${index}">12</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:26.152" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:26.151" endtime="20231020 19:05:30.330"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:30.331" endtime="20231020 19:05:30.642"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:30.642" endtime="20231020 19:05:31.038"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:31.471" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:31.038" endtime="20231020 19:05:31.471"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:31.472" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:31.472" endtime="20231020 19:05:31.472"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:31.893" level="INFO">${reqCount} = 732</msg>
+<status status="PASS" starttime="20231020 19:05:31.472" endtime="20231020 19:05:31.893"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:31.893" level="INFO">Counter: 732</msg>
+<status status="PASS" starttime="20231020 19:05:31.893" endtime="20231020 19:05:31.893"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:31.038" endtime="20231020 19:05:31.893"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:31.897" endtime="20231020 19:05:31.897"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:31.893" endtime="20231020 19:05:31.897"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:31.038" endtime="20231020 19:05:31.897"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:31.897" endtime="20231020 19:05:32.159"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:26.151" endtime="20231020 19:05:32.159"/>
+</iter>
+<iter>
+<var name="${index}">13</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:32.159" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:32.159" endtime="20231020 19:05:36.026"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:36.026" endtime="20231020 19:05:36.342"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:36.342" endtime="20231020 19:05:36.658"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:37.092" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:05:36.658" endtime="20231020 19:05:37.092"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:37.092" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:05:37.092" endtime="20231020 19:05:37.093"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:37.519" level="INFO">${reqCount} = 733</msg>
+<status status="PASS" starttime="20231020 19:05:37.093" endtime="20231020 19:05:37.519"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:37.520" level="INFO">Counter: 733</msg>
+<status status="PASS" starttime="20231020 19:05:37.519" endtime="20231020 19:05:37.520"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:36.658" endtime="20231020 19:05:37.520"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:37.523" endtime="20231020 19:05:37.523"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:37.520" endtime="20231020 19:05:37.523"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:36.658" endtime="20231020 19:05:37.523"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:37.523" endtime="20231020 19:05:37.787"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:32.159" endtime="20231020 19:05:37.787"/>
+</iter>
+<iter>
+<var name="${index}">14</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:37.788" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:37.788" endtime="20231020 19:05:41.126"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:41.127" endtime="20231020 19:05:41.439"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:41.439" endtime="20231020 19:05:41.758"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:42.192" level="INFO">${insID} = i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:41.759" endtime="20231020 19:05:42.192"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:42.192" level="INFO">Instance id: i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:42.192" endtime="20231020 19:05:42.192"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:42.608" level="INFO">${reqCount} = 734</msg>
+<status status="PASS" starttime="20231020 19:05:42.192" endtime="20231020 19:05:42.608"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:42.609" level="INFO">Counter: 734</msg>
+<status status="PASS" starttime="20231020 19:05:42.608" endtime="20231020 19:05:42.609"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:41.759" endtime="20231020 19:05:42.609"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:42.611" endtime="20231020 19:05:42.611"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:42.609" endtime="20231020 19:05:42.611"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:41.759" endtime="20231020 19:05:42.611"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:42.611" endtime="20231020 19:05:42.870"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:37.787" endtime="20231020 19:05:42.871"/>
+</iter>
+<iter>
+<var name="${index}">15</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:42.871" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:42.871" endtime="20231020 19:05:46.780"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:46.780" endtime="20231020 19:05:47.093"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:47.093" endtime="20231020 19:05:47.408"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:47.844" level="INFO">${insID} = i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:47.409" endtime="20231020 19:05:47.844"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:47.845" level="INFO">Instance id: i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:05:47.844" endtime="20231020 19:05:47.845"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:48.271" level="INFO">${reqCount} = 735</msg>
+<status status="PASS" starttime="20231020 19:05:47.845" endtime="20231020 19:05:48.271"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:48.271" level="INFO">Counter: 735</msg>
+<status status="PASS" starttime="20231020 19:05:48.271" endtime="20231020 19:05:48.271"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:47.408" endtime="20231020 19:05:48.271"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:48.275" endtime="20231020 19:05:48.275"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:48.272" endtime="20231020 19:05:48.275"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:47.408" endtime="20231020 19:05:48.276"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:48.276" endtime="20231020 19:05:48.536"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:42.871" endtime="20231020 19:05:48.536"/>
+</iter>
+<iter>
+<var name="${index}">16</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:48.536" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:48.536" endtime="20231020 19:05:52.341"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:52.341" endtime="20231020 19:05:52.652"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:52.652" endtime="20231020 19:05:52.971"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:53.402" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:52.971" endtime="20231020 19:05:53.402"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:53.403" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:53.403" endtime="20231020 19:05:53.403"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:53.827" level="INFO">${reqCount} = 736</msg>
+<status status="PASS" starttime="20231020 19:05:53.403" endtime="20231020 19:05:53.827"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:53.827" level="INFO">Counter: 736</msg>
+<status status="PASS" starttime="20231020 19:05:53.827" endtime="20231020 19:05:53.827"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:52.971" endtime="20231020 19:05:53.827"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:53.830" endtime="20231020 19:05:53.830"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:53.827" endtime="20231020 19:05:53.830"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:52.971" endtime="20231020 19:05:53.830"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:53.830" endtime="20231020 19:05:54.088"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:48.536" endtime="20231020 19:05:54.088"/>
+</iter>
+<iter>
+<var name="${index}">17</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:54.089" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:54.088" endtime="20231020 19:05:57.276"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:05:57.276" endtime="20231020 19:05:57.594"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:05:57.594" endtime="20231020 19:05:57.913"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:58.352" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:57.913" endtime="20231020 19:05:58.352"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:58.353" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:05:58.352" endtime="20231020 19:05:58.353"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:05:58.776" level="INFO">${reqCount} = 737</msg>
+<status status="PASS" starttime="20231020 19:05:58.353" endtime="20231020 19:05:58.776"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:05:58.776" level="INFO">Counter: 737</msg>
+<status status="PASS" starttime="20231020 19:05:58.776" endtime="20231020 19:05:58.777"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:57.913" endtime="20231020 19:05:58.777"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:05:58.780" endtime="20231020 19:05:58.780"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:05:58.777" endtime="20231020 19:05:58.780"/>
+</branch>
+<status status="PASS" starttime="20231020 19:05:57.913" endtime="20231020 19:05:58.780"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:05:58.780" endtime="20231020 19:05:59.038"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:54.088" endtime="20231020 19:05:59.038"/>
+</iter>
+<iter>
+<var name="${index}">18</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:05:59.039" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:05:59.039" endtime="20231020 19:06:03.127"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:06:03.128" endtime="20231020 19:06:03.439"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:06:03.440" endtime="20231020 19:06:03.786"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:04.215" level="INFO">${insID} = i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:06:03.787" endtime="20231020 19:06:04.215"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:04.216" level="INFO">Instance id: i-092b2444dfba2b2ed</msg>
+<status status="PASS" starttime="20231020 19:06:04.216" endtime="20231020 19:06:04.216"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:04.634" level="INFO">${reqCount} = 739</msg>
+<status status="PASS" starttime="20231020 19:06:04.216" endtime="20231020 19:06:04.634"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:04.634" level="INFO">Counter: 739</msg>
+<status status="PASS" starttime="20231020 19:06:04.634" endtime="20231020 19:06:04.634"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:03.787" endtime="20231020 19:06:04.634"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:06:04.637" endtime="20231020 19:06:04.637"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:04.635" endtime="20231020 19:06:04.637"/>
+</branch>
+<status status="PASS" starttime="20231020 19:06:03.787" endtime="20231020 19:06:04.637"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:06:04.637" endtime="20231020 19:06:04.894"/>
+</kw>
+<status status="PASS" starttime="20231020 19:05:59.038" endtime="20231020 19:06:04.894"/>
+</iter>
+<iter>
+<var name="${index}">19</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:06:04.894" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:06:04.894" endtime="20231020 19:06:08.428"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:06:08.428" endtime="20231020 19:06:08.738"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:06:08.738" endtime="20231020 19:06:09.048"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:09.487" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:06:09.049" endtime="20231020 19:06:09.487"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:09.488" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:06:09.488" endtime="20231020 19:06:09.488"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:09.916" level="INFO">${reqCount} = 740</msg>
+<status status="PASS" starttime="20231020 19:06:09.488" endtime="20231020 19:06:09.916"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:09.916" level="INFO">Counter: 740</msg>
+<status status="PASS" starttime="20231020 19:06:09.916" endtime="20231020 19:06:09.916"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:09.049" endtime="20231020 19:06:09.916"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:06:09.919" endtime="20231020 19:06:09.919"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:09.916" endtime="20231020 19:06:09.919"/>
+</branch>
+<status status="PASS" starttime="20231020 19:06:09.048" endtime="20231020 19:06:09.919"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:06:09.919" endtime="20231020 19:06:10.185"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:04.894" endtime="20231020 19:06:10.185"/>
+</iter>
+<iter>
+<var name="${index}">20</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:06:10.186" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:06:10.185" endtime="20231020 19:06:13.354"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:06:13.355" endtime="20231020 19:06:13.665"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:06:13.666" endtime="20231020 19:06:13.983"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:14.412" level="INFO">${insID} = i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:06:13.983" endtime="20231020 19:06:14.412"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:14.412" level="INFO">Instance id: i-0e04a61d65b3e8adc</msg>
+<status status="PASS" starttime="20231020 19:06:14.412" endtime="20231020 19:06:14.412"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:14.829" level="INFO">${reqCount} = 741</msg>
+<status status="PASS" starttime="20231020 19:06:14.412" endtime="20231020 19:06:14.829"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:14.829" level="INFO">Counter: 741</msg>
+<status status="PASS" starttime="20231020 19:06:14.829" endtime="20231020 19:06:14.829"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:13.983" endtime="20231020 19:06:14.829"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:06:14.832" endtime="20231020 19:06:14.832"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:14.829" endtime="20231020 19:06:14.832"/>
+</branch>
+<status status="PASS" starttime="20231020 19:06:13.983" endtime="20231020 19:06:14.832"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:06:14.832" endtime="20231020 19:06:15.096"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:10.185" endtime="20231020 19:06:15.096"/>
+</iter>
+<iter>
+<var name="${index}">21</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:06:15.097" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<status status="PASS" starttime="20231020 19:06:15.096" endtime="20231020 19:06:19.203"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" starttime="20231020 19:06:19.203" endtime="20231020 19:06:19.516"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20231020 19:06:19.516" endtime="20231020 19:06:19.830"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:20.260" level="INFO">${insID} = i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:06:19.831" endtime="20231020 19:06:20.260"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:20.261" level="INFO">Instance id: i-09e15a228c784ae6e</msg>
+<status status="PASS" starttime="20231020 19:06:20.261" endtime="20231020 19:06:20.261"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231020 19:06:20.690" level="INFO">${reqCount} = 742</msg>
+<status status="PASS" starttime="20231020 19:06:20.261" endtime="20231020 19:06:20.690"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231020 19:06:20.690" level="INFO">Counter: 742</msg>
+<status status="PASS" starttime="20231020 19:06:20.690" endtime="20231020 19:06:20.690"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:19.831" endtime="20231020 19:06:20.690"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:06:20.694" endtime="20231020 19:06:20.694"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:20.691" endtime="20231020 19:06:20.694"/>
+</branch>
+<status status="PASS" starttime="20231020 19:06:19.830" endtime="20231020 19:06:20.694"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231020 19:06:20.694" endtime="20231020 19:06:21.072"/>
+</kw>
+<status status="PASS" starttime="20231020 19:06:15.096" endtime="20231020 19:06:21.072"/>
+</iter>
+<iter>
+<var name="${index}">22</var>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231020 19:06:21.073" level="INFO">Opening browser 'chrome' to base url 'http://cloud-arch-lb-1656797433.us-east-1.elb.amazonaws.com'.</msg>
+<msg timestamp="20231020 19:06:21.311" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="FAIL" starttime="20231020 19:06:21.072" endtime="20231020 19:06:21.311"/>
+</kw>
+<kw name="Set Window Position" library="SeleniumLibrary">
+<arg>x=100</arg>
+<arg>y=200</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.311" endtime="20231020 19:06:21.311"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>width=1600</arg>
+<arg>height=1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${insID}</var>
+<arg>xpath://h5[@id="instance-id"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Instance id: ${insID}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${reqCount}</var>
+<arg>xpath://h4[@id="counter"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Counter: ${reqCount}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.312"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>"fail"</pattern>
+<kw name="log &quot;Error&quot;">
+<status status="NOT RUN" starttime="20231020 19:06:21.315" endtime="20231020 19:06:21.316"/>
+</kw>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.316"/>
+</branch>
+<status status="NOT RUN" starttime="20231020 19:06:21.312" endtime="20231020 19:06:21.316"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231020 19:06:21.316" endtime="20231020 19:06:21.316"/>
+</kw>
+<status status="FAIL" starttime="20231020 19:06:21.072" endtime="20231020 19:06:21.316"/>
+</iter>
+<status status="FAIL" starttime="20231020 19:04:25.417" endtime="20231020 19:06:21.316"/>
+</for>
+<doc>Open react sample app</doc>
+<status status="FAIL" starttime="20231020 19:04:25.416" endtime="20231020 19:06:21.316">Execution terminated by signal</status>
+</test>
+<doc>This is the basic info about the whole suite</doc>
+<status status="FAIL" starttime="20231020 19:04:25.235" endtime="20231020 19:06:21.317"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="React">React</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
